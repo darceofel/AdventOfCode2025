@@ -31,24 +31,13 @@ EOF
 cat > "inputs/day$n.txt" <<EOF
 EOF
 
-
-echo "Creado: $dir/{Solution.go,Utils.go}"
-
 # 2. Insertar import en main.go
 # Busca la línea que contiene "import (" y agrega justo después
 sed -i "" "/import (/a\\
     \"advent_of_code/solutions/day$n\"\
-" main.go
-
-echo "Import agregado a main.go"
 
 # 3. Insertar la entrada al map solutions
 # Busca el inicio del map: "var solutions = map[string]func(string) (string, string){" 
 # Y agrega la línea siguiente
 sed -i "" "/var solutions = map\[string\]func(string) (string, string){/a\\
     \"$n\": day$n.Solution,\
-" main.go
-
-echo "Entrada del mapa agregada a main.go"
-
-echo "Día $n listo 🚀"
