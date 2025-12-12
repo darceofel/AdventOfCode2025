@@ -11,3 +11,7 @@ func PowInt(a, b int) int {
 	}
 	return p
 }
+
+func Abs(a int) int {
+	return max(a, -a)
+}

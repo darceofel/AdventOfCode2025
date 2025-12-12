@@ -9,11 +9,13 @@ import (
 	"advent_of_code/solutions/day6"
 	"advent_of_code/solutions/day7"
 	"advent_of_code/solutions/day8"
+	"advent_of_code/solutions/day9"
 	"fmt"
 	"os"
 )
 
 var solutions = map[string]func(string) (string, string){
+	"9": day9.Solution,
 	"8": day8.Solution,
 	"7": day7.Solution,
 	"6": day6.Solution,
